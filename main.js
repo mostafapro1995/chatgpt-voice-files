@@ -17,7 +17,7 @@ const recordingIndicator = document.getElementById("recording-indicator");
 // إرسال رسالة إلى OpenAI
 async function sendToOpenAI(message) {
   try {
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    const res = await fetch("http://localhost:3000/api/chat", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${OPENAI_API_KEY}`,
@@ -217,5 +217,6 @@ screenRecordBtn.onclick = async () => {
     alert("لم يتم منح إذن مشاركة الشاشة.");
   }
 };
+
 
 
